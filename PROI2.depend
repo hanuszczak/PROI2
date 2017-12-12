@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1510777173 source:c:\users\hanus\onedrive\documents\proi2\menu.cpp
+	"test.h"
+	"menu.h"
+	"Point.h"
+	"PointSet2.h"
+	<iostream>
+	<string>
+
+1512600161 c:\users\hanus\onedrive\documents\proi2\test.h
+	"Point.h"
+	"PointSet2.h"
+	<iostream>
+
+1512600161 c:\users\hanus\onedrive\documents\proi2\point.h
+
+1512600126 c:\users\hanus\onedrive\documents\proi2\pointset2.h
+	<vector>
+	"Point.h"
+
+1510763674 c:\users\hanus\onedrive\documents\proi2\menu.h
+	"test.h"
+	"PointSet2.h"
+	<iostream>
+
+1512041281 source:c:\users\hanus\onedrive\documents\proi2\pointset2.cpp
+	"PointSet2.h"
+	<iostream>
+	<math.h>
+	<float.h>
+	<algorithm>
+
