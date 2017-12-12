@@ -3,7 +3,9 @@
 
 class PointSet2;
 
+
 //Próba mikrp
+
 class Point
 {
     public:
