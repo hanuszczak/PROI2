@@ -2,8 +2,7 @@
 #define POINT_H
 
 class PointSet2;
-
-
+/// próba mikrofonu
 class Point
 {
     public:
