@@ -38,16 +38,16 @@ void menuTest() {
             else cout<<SIGN2<<"Tests failed"<<SIGN2<<endl;
         } break;
         case 2: {
-            PointSet2 Set1;
+            PointSet2<int> Set1;
             Set1.CreateSet();
             cout<<"Created set of points:"<<endl;
             Set1.Print();
         } break;
         case 3: {
-            PointSet2 Set1;
+            PointSet2<int> Set1;
             Set1.CreateSet();
             Set1.Print();
-            Point P;
+            Point<int> P;
             P.CreatePoint();
             cout<<"Set before adding new point:"<<endl;
             Set1.Print();
@@ -56,33 +56,33 @@ void menuTest() {
             Set1.Print();
         } break;
         case 4: {
-            PointSet2 Set1;
+            PointSet2<int> Set1;
             Set1.CreateSet();
             Set1.Print();
-            PointSet2 Set2=Set1.Closest();
+            PointSet2<int> Set2=Set1.Closest();
             cout<<"Function Closest returned points:"<<endl;
             Set2.Print();
         } break;
         case 5: {
             cout<<"Creating first set of points"<<endl;
-            PointSet2 Set1;
+            PointSet2<int> Set1;
             Set1.CreateSet();
             Set1.Print();
             cout<<"Creating second set of points"<<endl;
-            PointSet2 Set2;
+            PointSet2<int> Set2;
             Set2.CreateSet();
             Set2.Print();
-            PointSet2 Set3=Set1+Set2;
+            PointSet2<int> Set3=Set1+Set2;
             cout<<"Sum of sets:"<<endl;
             Set3.Print();
         } break;
         case 6: {
             cout<<"Creating first set of points"<<endl;
-            PointSet2 Set1;
+            PointSet2<int> Set1;
             Set1.CreateSet();
             Set1.Print();
             cout<<"Creating second set of points"<<endl;
-            PointSet2 Set2;
+            PointSet2<int> Set2;
             Set2.CreateSet();
             Set2.Print();
             Set1+=Set2;
@@ -91,24 +91,24 @@ void menuTest() {
         } break;
         case 7: {
             cout<<"Creating first set of points"<<endl;
-            PointSet2 Set1;
+            PointSet2<int> Set1;
             Set1.CreateSet();
             Set1.Print();
             cout<<"Creating second set of points"<<endl;
-            PointSet2 Set2;
+            PointSet2<int> Set2;
             Set2.CreateSet();
             Set2.Print();
-            PointSet2 Set3=Set1*Set2;
+            PointSet2<int> Set3=Set1*Set2;
             cout<<"Intersection of sets:"<<endl;
             Set3.Print();
         } break;
          case 8: {
             cout<<"Creating first set of points"<<endl;
-            PointSet2 Set1;
+            PointSet2<int> Set1;
             Set1.CreateSet();
             Set1.Print();
             cout<<"Creating second set of points"<<endl;
-            PointSet2 Set2;
+            PointSet2<int> Set2;
             Set2.CreateSet();
             Set2.Print();
             Set1*=Set2;
@@ -121,9 +121,10 @@ void menuTest() {
     }
     menuTest();
 }
-PointSet2 CreateSet(){
+template <typename T>
+PointSet2<T> CreateSet(){
     unsigned int counter;
-    PointSet2 Set1;
+    PointSet2<T> Set1;
     cout<<"How many points it will hold?: "<<flush;
     cin>>counter;
     while(cin.fail()||(counter<0)){
@@ -132,20 +133,20 @@ PointSet2 CreateSet(){
         cout<<"Choose a integer greater than or equal to 0"<<endl;
         cin>>counter;
     }
-    vector<Point> v;
+    vector<Point<T> > v;
     v.reserve(counter);
     if(counter==0){
         cout<<"Empty set was created"<<endl;
     }
     else {
-        vector<Point*> tmp;
         for(unsigned int i=0; i<counter; i++){
-            Point P;
+            Point<T> P;
             P.CreatePoint();
             v.push_back(P);
             Set1.AddPoint(v.at(i));
         }
         cout<<"Created set:"<<endl;
     }
+    return Set1;
 }
 
