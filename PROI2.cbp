@@ -31,13 +31,11 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="Point.cpp" />
 		<Unit filename="Point.h" />
 		<Unit filename="PointSet2.cpp" />
 		<Unit filename="PointSet2.h" />
 		<Unit filename="menu.cpp" />
 		<Unit filename="menu.h" />
-		<Unit filename="test.cpp" />
 		<Unit filename="test.h" />
 		<Extensions>
 			<code_completion />

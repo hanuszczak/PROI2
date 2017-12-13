@@ -14,6 +14,7 @@ void menuTestSetSum2();
 void menuTestSetIntersection1();
 void menuTestSetIntersection2();
 void closing();
+int dataType();
 
 
 

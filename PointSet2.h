@@ -35,7 +35,7 @@ void  Print() {
         cout<<"Set is empty"<<endl;
     else {
         for (unsigned int i=0; i<Members.size(); i++)
-            Members.at(i).PrintPoint();
+            Members.at(i).Print();
     }
     cout<<SIGN<<endl;
 }

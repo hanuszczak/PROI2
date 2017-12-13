@@ -8,11 +8,11 @@ class PointSet2;
 
 using namespace std;
 
+
 template <typename T>
 class Point
 {
-
-    private:
+private:
         friend class PointSet2<T>;
         T x, y;
 public:
@@ -57,12 +57,13 @@ bool  operator>=(Point &A){
 bool  operator<=(Point &A){
     return ((*this)<A||(*this)==A);
 }
-bool  Compare(Point A, Point B){
+bool static Compare(Point A, Point B){
     return (A<B);
 }
-void  PrintPoint(){
+virtual void  Print(){
     cout<<"("<<x<<", "<<y<<")"<<endl;
 }
+
 void  CreatePoint(){
     cout<<"Give integral x coordinate: "<<flush;
     cin>>x;
@@ -83,5 +84,28 @@ void  CreatePoint(){
 }
 
 };
+template <typename T>
+class Vector: Point<T>
+{
+    private:
+    T x, y;
 
+    public:
+    Vector()
+    {
+    }
+    Vector(T x1, T y1)
+    {
+        x=x1;
+        y=y1;
+    }
+    ~Vector()
+    {
+    }
+
+    void Print()
+    {
+        cout<<"<"<<x<<"; "<<y<<">"<<endl;
+    }
+};
 #endif // POINT_H
